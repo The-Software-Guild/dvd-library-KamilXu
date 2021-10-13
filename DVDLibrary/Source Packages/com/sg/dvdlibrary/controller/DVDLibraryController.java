@@ -88,7 +88,19 @@ public class DVDLibraryController {
         view.displayEditDVDBanner();
         String titleDVD = view.gettitleDVDChoice();
         DVD DVD = dao.getDVD(titleDVD);
-        view.displayDVDEdit(DVD);
+        if (DVD != null) {
+            System.out.println("1. Title: " + DVD.gettitleDVD());
+            System.out.println("2. Director: " + DVD.getdirectorName());
+            System.out.println("3. Studio: " + DVD.getstudioName());
+            System.out.println("4. Release: " + DVD.getreleaseDate());
+            System.out.println("5. MPAA: " + DVD.getratingMPAA());
+            System.out.println("6. Note: " + DVD.getremarkNote());
+            System.out.println("");
+        } else {
+            System.out.println("No such DVD Exists.");
+            view.displayEnterMessage();
+            return;
+        }
         editField = getEditSelection();
         switch (editField) {
         case 1:

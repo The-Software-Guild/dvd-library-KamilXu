@@ -84,22 +84,6 @@ public class DVDLibraryView {
         io.readString("Please hit enter to continue.");
     }
     
-    public void displayDVDEdit(DVD DVD) {
-        if (DVD != null) {
-            io.print("1. Title: " + DVD.gettitleDVD());
-            io.print("2. Director: " + DVD.getdirectorName());
-            io.print("3. Studio: " + DVD.getstudioName());
-            io.print("4. Release: " + DVD.getreleaseDate());
-            io.print("5. MPAA: " + DVD.getratingMPAA());
-            io.print("6. Note: " + DVD.getremarkNote());
-            io.print("");
-        } else {
-            io.print("No such DVD Exists.");
-            io.readString("Please hit enter to Exit Program.");
-            displayExitBanner();
-            System.exit(1);
-        }
-    }
     
     public int getDVDEditNumber() {
     	return io.readInt("Please select which Field do you want to Edit.", 1, 6);
